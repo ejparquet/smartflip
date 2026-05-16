@@ -1,3 +1,4 @@
+import { serve } from "@hono/node-server";
 import { trpcServer } from "@hono/trpc-server";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
@@ -10,7 +11,7 @@ const app = new Hono();
 app.use("*", cors());
 
 app.use(
-  "/trpc/*",
+  "/api/trpc/*",
   trpcServer({
     endpoint: "/api/trpc",
     router: appRouter,
@@ -20,6 +21,12 @@ app.use(
 
 app.get("/", (c) => {
   return c.json({ status: "ok", message: "Smart Flip API is running" });
+});
+
+const port = Number(process.env.PORT) || 3000;
+
+serve({ fetch: app.fetch, port }, () => {
+  console.log(`Smart Flip API running on port ${port}`);
 });
 
 export default app;

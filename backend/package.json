@@ -1,0 +1,24 @@
+{
+  "name": "smart-flip-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "tsx hono.ts",
+    "dev": "tsx watch hono.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "@hono/trpc-server": "^0.4.2",
+    "@libsql/client": "^0.17.0",
+    "@trpc/server": "^11.8.1",
+    "drizzle-orm": "^0.45.1",
+    "hono": "^4.11.5",
+    "resend": "^6.8.0",
+    "superjson": "^2.2.6",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "~5.9.2"
+  }
+}
