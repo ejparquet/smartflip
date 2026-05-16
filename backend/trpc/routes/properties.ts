@@ -1,8 +1,8 @@
 import { z } from "zod";
 import { eq, gte, lte } from "drizzle-orm";
 import { createTRPCRouter, publicProcedure } from "../create-context";
-import { properties, marketplaceListings, users } from "@/backend/db/schema";
-import { realEstateApi } from "@/backend/services/realEstateApi";
+import { properties, marketplaceListings, users } from "../../db/schema";
+import { realEstateApi } from "../../services/realEstateApi";
 
 const generateId = () => Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
 

@@ -1,9 +1,9 @@
 import { z } from "zod";
 import { eq, and, gte, lte, sql } from "drizzle-orm";
 import { createTRPCRouter, publicProcedure } from "../create-context";
-import { taxAuctions, savedAuctions, auctionBids } from "@/backend/db/schema";
-import { realEstateApi } from "@/backend/services/realEstateApi";
-import { runMigrations } from "@/backend/db/migrate";
+import { taxAuctions, savedAuctions, auctionBids } from "../../db/schema";
+import { realEstateApi } from "../../services/realEstateApi";
+import { runMigrations } from "../../db/migrate";
 
 const generateId = () => Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
 
